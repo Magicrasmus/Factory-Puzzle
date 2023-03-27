@@ -18,21 +18,27 @@ public class BoxMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PausMenyScript.GameIsPaused == false)
+        {
+
+            rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
+
+
+        }
       
-        rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Belt")
-    //    {
-    //        direction = Vector3.zero;
-    //        rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Belt")
+        {
+            direction = Vector3.zero;
+            rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
 
-    //    }
-    //    else
-    //    {
-    //    }
-    //    Debug.Log("out");
-    //}
+        }
+        else
+        {
+        }
+        Debug.Log("out");
+    }
 }
