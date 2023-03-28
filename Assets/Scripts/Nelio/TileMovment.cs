@@ -6,7 +6,9 @@ public class TileMovment : MonoBehaviour
 {
     [SerializeField]
     float moveSpeed = 0.25f;
-    
+    [SerializeField]
+    float rayLenght = 1.4f;
+
     Vector3 targetPosition;
     Vector3 startPosition;
     bool moving;
@@ -14,7 +16,7 @@ public class TileMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class TileMovment : MonoBehaviour
 
         if (moving)
         {
-            if(Vector3.Distance(startPosition, transform.position) > 1f) 
+            if (Vector3.Distance(startPosition, transform.position) > 1f)
             {
                 transform.position = targetPosition;
                 moving = false;
@@ -37,33 +39,45 @@ public class TileMovment : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            targetPosition = transform.position + Vector3.forward;
-            startPosition = transform.position;
-            moving = true;
+            if (!Physics.Raycast(transform.position, Vector3.forward, rayLenght))
+            {
+                targetPosition = transform.position + Vector3.forward;
+                startPosition = transform.position;
+                moving = true;
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            targetPosition = transform.position + Vector3.back;
-            startPosition = transform.position;
-            moving = true;
+            if (!Physics.Raycast(transform.position, Vector3.back, rayLenght))
+            {
+                targetPosition = transform.position + Vector3.back;
+                startPosition = transform.position;
+                moving = true;
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            targetPosition = transform.position + Vector3.left;
-            startPosition = transform.position;
-            moving = true;
+            if (!Physics.Raycast(transform.position, Vector3.left, rayLenght))
+            {
+                targetPosition = transform.position + Vector3.left;
+                startPosition = transform.position;
+                moving = true;
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            targetPosition = transform.position + Vector3.right;
-            startPosition = transform.position;
-            moving = true;
+            if (!Physics.Raycast(transform.position, Vector3.right, rayLenght))
+            {
+                targetPosition = transform.position + Vector3.right;
+                startPosition = transform.position;
+                moving = true;
+            }
         }
 
     }
 
-   
+
 }
