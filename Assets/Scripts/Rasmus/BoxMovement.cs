@@ -28,17 +28,17 @@ public class BoxMovement : MonoBehaviour
       
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Belt")
-        {
-            direction = Vector3.zero;
-            rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Belt")
+    //    {
+    //        direction = Vector3.zero;
+    //        rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
 
-        }
-        else
-        {
-        }
-        Debug.Log("out");
-    }
+    //    }
+    //    else
+    //    {
+    //    }
+    //    Debug.Log("out");
+    //}
 }
