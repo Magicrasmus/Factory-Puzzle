@@ -5,9 +5,9 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
 
+    public GameObject conveyorbelt;
+    public Transform endpoint;
     public float speed;
-    public Vector3 direction;
-    public List<GameObject> onBelt;
 
 
     // Start is called before the first frame update
@@ -19,21 +19,11 @@ public class ConveyorBelt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i <= onBelt.Count -1; i++)
-        {
-            onBelt[i].GetComponent<Rigidbody>().velocity = speed * direction * Time.deltaTime;
-        }
+        
     }
 
-    // När något kolliderar med beltet
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerStay(Collider other)
     {
-        onBelt.Add(collision.gameObject);
-    }
-
-    // När något lämnar beltet
-    private void OnCollisionExit(Collision collision)
-    {
-        onBelt.Remove(collision.gameObject);
+        other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed * Time.deltaTime);
     }
 }
