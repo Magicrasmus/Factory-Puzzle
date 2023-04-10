@@ -23,29 +23,27 @@ public class ConveyorMovement : MonoBehaviour
     void Update()
     {
 
-        if (moving)
-        {
-            if (Vector3.Distance(startPosition, transform.position) > 1f)
-            {
-                transform.position = targetPosition;
-                moving = false;
-                return;
-            }
+        //if (moving)
+        //{
+        //    if (Vector3.Distance(startPosition, transform.position) > 1f)
+        //    {
+        //        transform.position = targetPosition;
+        //        moving = false;
+        //        return;
+        //    }
 
-            transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
-            return;
+        //    transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
+        //    return;
 
-        }
+        //}
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "player")
+        if(other.collider.tag == "player")
         {
-            targetPosition = transform.position;
-            startPosition = transform.position;
-            moving = true;
+            
         }
     }
 }
