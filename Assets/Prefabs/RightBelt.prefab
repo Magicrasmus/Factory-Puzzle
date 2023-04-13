@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6792c85ac16e490469bf874608fd4515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beltDirection: {x: 0.4, y: 0, z: 0}
+  beltDirection: {x: 1, y: 0, z: 0}

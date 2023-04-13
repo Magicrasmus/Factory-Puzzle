@@ -26,6 +26,8 @@ public class BeltScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+
+
         if (other.gameObject.tag == "Box" && start == true)
         {
             other.gameObject.GetComponent<BoxMovement>().direction = beltDirection;
