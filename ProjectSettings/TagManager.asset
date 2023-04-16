@@ -7,6 +7,8 @@ TagManager:
   - SpawnPoint
   - Box
   - Belt
+  - movable
+  - unmovable
   layers:
   - Default
   - TransparentFX
