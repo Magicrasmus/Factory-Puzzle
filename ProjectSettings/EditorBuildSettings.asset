@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 924b2cd51816c184d907c8e839da6801
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/RasmusPausMeny.unity
-    guid: fa56a458ba49f8543a70dae0ebb1c413
+    path: Assets/Scenes/TestScene.unity
+    guid: ab70e9eb9a54e55408b3a465e9cfb7b2
   m_configObjects: {}
