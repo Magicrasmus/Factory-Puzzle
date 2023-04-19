@@ -70,7 +70,7 @@ public class ConveyorBelt : MonoBehaviour
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("forward"))
                     {
-                        targetPosition = transform.position + Vector3.back;
+                        targetPosition = transform.position + Vector3.forward;
                         startPosition = transform.position;
                         moving = true;
                         return true;
@@ -126,7 +126,7 @@ public class ConveyorBelt : MonoBehaviour
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("left"))
                     {
-                        targetPosition = transform.position + Vector3.back;
+                        targetPosition = transform.position + Vector3.left;
                         startPosition = transform.position;
                         moving = true;
                         return true;
@@ -154,7 +154,7 @@ public class ConveyorBelt : MonoBehaviour
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("right"))
                     {
-                        targetPosition = transform.position + Vector3.back;
+                        targetPosition = transform.position + Vector3.right;
                         startPosition = transform.position;
                         moving = true;
                         return true;
