@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TileMovment : MonoBehaviour
 {
@@ -26,8 +27,12 @@ public class TileMovment : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (active) { active = false; }
-            else if (!active) { active = true; }
+            active = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("TestScene");
         }
 
         Ray theRay = new Ray(transform.position, transform.TransformDirection(transform.forward));

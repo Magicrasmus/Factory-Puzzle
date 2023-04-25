@@ -32,8 +32,7 @@ public class ConveyorBelt : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (active) { active = false; }
-            else if (!active) { active = true; }
+             active = true;
         }
 
         if (moving)
