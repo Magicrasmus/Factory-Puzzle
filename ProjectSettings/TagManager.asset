@@ -9,6 +9,7 @@ TagManager:
   - Belt
   - movable
   - unmovable
+  - Floor
   layers:
   - Default
   - TransparentFX
