@@ -77,6 +77,12 @@ public class ConveyorBelt : MonoBehaviour
                     else return false;
                 }
                 else return false;
+
+                if(hit.collider.tag == "IceTile")
+                {
+                   
+                }
+               
             }
             else
             {
@@ -169,6 +175,7 @@ public class ConveyorBelt : MonoBehaviour
                 moving = true;
                 return true;
             }
-        }else return false;
+        }
+        else return false;
     }  
 }

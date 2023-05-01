@@ -9,6 +9,7 @@ TagManager:
   - Belt
   - movable
   - unmovable
+  - IceTile
   layers:
   - Default
   - TransparentFX
