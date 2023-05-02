@@ -9,9 +9,11 @@ public class BreakFloorScript : MonoBehaviour
     public Material brokenTex;
     public Material normalTex;
     Renderer rend;
+    BoxCollider collider;
     void Start()
     {
         rend = GetComponent<Renderer>();
+        collider = GetComponent<BoxCollider>();
         rend.enabled = true;
         rend.material = normalTex;
     }
@@ -28,6 +30,8 @@ public class BreakFloorScript : MonoBehaviour
             Debug.Log("floor is broken");
             gameObject.tag = "unmovable";
             rend.material = brokenTex;
+            collider.size = new Vector3 (9, 1, 9);
+            collider.center = new Vector3 (0, 0.5f, 0);
         }
     }
 }
