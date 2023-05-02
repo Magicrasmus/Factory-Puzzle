@@ -19,12 +19,15 @@ public class ConveyorBelt : MonoBehaviour
     Vector3 startPosition;
     bool moving;
     ConveyorBelt conveyorBelt;
+    bool slide;
+    string direction;
 
 
     // Start is called before the first frame update
     void Start()
     {
         active = false;
+        slide = false;
     }
 
     // Update is called once per frame
@@ -41,6 +44,11 @@ public class ConveyorBelt : MonoBehaviour
             {
                 transform.position = targetPosition;
                 moving = false;
+                if (slide)
+                {
+                    slide = false;
+                    MoveBelt(direction);
+                }
                 return;
             }
 
@@ -48,7 +56,7 @@ public class ConveyorBelt : MonoBehaviour
             return;
         }
     }
-        
+
     void OnTriggerStay(Collider other)
     {
         if (active && other.tag == "Box")
@@ -57,8 +65,17 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "IceTile")
+        {
+            slide = true;
+        }
+    }
+
     public bool MoveBelt(string direction)
     {
+        this.direction = direction;
         if (direction == "forward")
         {
             Ray theRay = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
@@ -77,12 +94,6 @@ public class ConveyorBelt : MonoBehaviour
                     else return false;
                 }
                 else return false;
-
-                if(hit.collider.tag == "IceTile")
-                {
-                   
-                }
-               
             }
             else
             {
