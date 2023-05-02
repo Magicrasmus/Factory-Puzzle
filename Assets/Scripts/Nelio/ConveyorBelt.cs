@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +20,9 @@ public class ConveyorBelt : MonoBehaviour
     Vector3 startPosition;
     bool moving;
     ConveyorBelt conveyorBelt;
+    Ray theRay;
+    [SerializeField]
+    int rotation;
 
 
     // Start is called before the first frame update
@@ -59,9 +63,10 @@ public class ConveyorBelt : MonoBehaviour
 
     public bool MoveBelt(string direction)
     {
+        theRay = new Ray(transform.position, Vector3.zero);
         if (direction == "forward")
         {
-            Ray theRay = new Ray(transform.position, transform.TransformDirection(Vector3.forward));
+            theRay.direction = Vector3.forward;
             if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
             {
                 if (hit.collider.tag != "unmovable")
@@ -89,7 +94,7 @@ public class ConveyorBelt : MonoBehaviour
 
         else if (direction == "back")
         {
-            Ray theRay = new Ray(transform.position, transform.TransformDirection(Vector3.back));
+            theRay.direction = Vector3.back;
             if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
             {
                 if (hit.collider.tag != "unmovable")
@@ -117,7 +122,7 @@ public class ConveyorBelt : MonoBehaviour
 
         else if (direction == "left")
         {
-            Ray theRay = new Ray(transform.position, transform.TransformDirection(Vector3.left));
+            theRay.direction = Vector3.left;
             if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
             {
                 if (hit.collider.tag != "unmovable")
@@ -145,7 +150,7 @@ public class ConveyorBelt : MonoBehaviour
 
         else if (direction == "right")
         {
-            Ray theRay = new Ray(transform.position, transform.TransformDirection(Vector3.right));
+            theRay.direction = Vector3.right;
             if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
             {
                 if(hit.collider.tag != "unmovable")
@@ -171,4 +176,29 @@ public class ConveyorBelt : MonoBehaviour
             }
         }else return false;
     }  
+
+    public void Rotate()
+    {
+        rotation++;
+
+        switch (rotation)
+        {
+            case 1:
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                break;
+
+            case 2:
+                transform.localRotation = Quaternion.Euler(0, 90, 0);
+                break;
+
+            case 3:
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                break;
+
+            case 4:
+                transform.localRotation = Quaternion.Euler(0, 270, 0);
+                rotation = 0;
+                break;
+        }
+    }
 }

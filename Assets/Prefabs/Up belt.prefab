@@ -133,6 +133,7 @@ MonoBehaviour:
   active: 0
   moveSpeed: 20
   rayLenght: 1.4
+  rotation: 1
 --- !u!54 &8331308620666931556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 8331308621884280127}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.51, z: 0}
-  m_LocalScale: {x: 0.10411, y: 1, z: 0.09571238}
+  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8331308620666931557}
