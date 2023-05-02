@@ -23,6 +23,8 @@ public class ConveyorBelt : MonoBehaviour
     Ray theRay;
     [SerializeField]
     int rotation;
+    bool slide;
+    string direction;
 
 
     // Start is called before the first frame update
@@ -37,6 +39,7 @@ public class ConveyorBelt : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
              active = true;
+            slide = false;
         }
 
         if (moving)
@@ -45,6 +48,11 @@ public class ConveyorBelt : MonoBehaviour
             {
                 transform.position = targetPosition;
                 moving = false;
+                if (slide)
+                {
+                    slide = false;
+                    MoveBelt(direction);
+                }
                 return;
             }
 
@@ -61,8 +69,17 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "IceTile")
+        {
+            slide = true;
+        }
+    }
+
     public bool MoveBelt(string direction)
     {
+        this.direction = direction;
         theRay = new Ray(transform.position, Vector3.zero);
         if (direction == "forward")
         {
