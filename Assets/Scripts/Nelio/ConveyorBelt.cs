@@ -71,6 +71,15 @@ public class ConveyorBelt : MonoBehaviour
             {
                 if (hit.collider.tag != "unmovable")
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.forward;
+                        startPosition = transform.position;
+                        moving = true;
+                        return true;
+                    }
+
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("forward"))
                     {
@@ -99,6 +108,14 @@ public class ConveyorBelt : MonoBehaviour
             {
                 if (hit.collider.tag != "unmovable")
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.back;
+                        startPosition = transform.position;
+                        moving = true;
+                        return true;
+                    }
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("back"))
                     {
@@ -127,6 +144,14 @@ public class ConveyorBelt : MonoBehaviour
             {
                 if (hit.collider.tag != "unmovable")
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.left;
+                        startPosition = transform.position;
+                        moving = true;
+                        return true;
+                    }
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("left"))
                     {
@@ -155,6 +180,14 @@ public class ConveyorBelt : MonoBehaviour
             {
                 if(hit.collider.tag != "unmovable")
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.right;
+                        startPosition = transform.position;
+                        moving = true;
+                        return true;
+                    }
                     conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                     if (conveyorBelt.MoveBelt("right"))
                     {
