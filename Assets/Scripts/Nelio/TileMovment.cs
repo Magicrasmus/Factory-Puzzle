@@ -59,6 +59,13 @@ public class TileMovment : MonoBehaviour
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.forward;
+                        startPosition = transform.position;
+                        moving = true;
+                    }
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
@@ -84,6 +91,13 @@ public class TileMovment : MonoBehaviour
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.back;
+                        startPosition = transform.position;
+                        moving = true;
+                    }
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
@@ -109,6 +123,13 @@ public class TileMovment : MonoBehaviour
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.left;
+                        startPosition = transform.position;
+                        moving = true;
+                    }
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
@@ -134,6 +155,13 @@ public class TileMovment : MonoBehaviour
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
+                    if (hit.collider.tag == "Floor")
+                    {
+                        Debug.Log("floor");
+                        targetPosition = transform.position + Vector3.right;
+                        startPosition = transform.position;
+                        moving = true;
+                    }
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
