@@ -100,7 +100,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Size: {x: 0.8, y: 1, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &3231251931845064462
 BoxCollider:
@@ -133,7 +133,9 @@ MonoBehaviour:
   active: 0
   moveSpeed: 20
   rayLenght: 1.4
+  targetPosition: {x: 0, y: 0, z: 0}
   rotation: 2
+  pushed: 0
 --- !u!54 &3231251931845064460
 Rigidbody:
   m_ObjectHideFlags: 0

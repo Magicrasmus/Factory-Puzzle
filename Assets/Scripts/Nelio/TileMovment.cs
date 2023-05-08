@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,20 +16,29 @@ public class TileMovment : MonoBehaviour
     bool moving;
     public bool active;
     ConveyorBelt conveyorBelt;
+    bool slide;
+    string direction;
+    bool again;
 
     // Start is called before the first frame update
     void Start()
     {
         active = false;
+        slide = false;
+        again = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "IceTile")
+        {
+            slide = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            active = true;
-        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -37,24 +47,29 @@ public class TileMovment : MonoBehaviour
 
         Ray theRay = new Ray(transform.position, transform.TransformDirection(transform.forward));
 
+        if (moving)
+        {
+            if (Vector3.Distance(startPosition, transform.position) > 1f)
+            {
+                transform.position = targetPosition;
+                moving = false;
+                if (slide)
+                {
+                    slide = false;
+                    again = true;
+                }
+                return;
+            }
+            transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
+            return;
+
+        }
+
         if (!active)
         {
-            if (moving)
+            if ((Input.GetKeyDown(KeyCode.W) || (again && direction == "forward")) && !moving)
             {
-                if (Vector3.Distance(startPosition, transform.position) > 1f)
-                {
-                    transform.position = targetPosition;
-                    moving = false;
-                    return;
-                }
-
-                transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
-                return;
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
+                direction = "forward";
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
@@ -69,12 +84,14 @@ public class TileMovment : MonoBehaviour
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
-                        if (conveyorBelt.MoveBelt("forward"))
+                        if (again) conveyorBelt.pushed = true;
+                        if (conveyorBelt.MoveBelt(direction))
                         {
                             targetPosition = transform.position + Vector3.forward;
                             startPosition = transform.position;
                             moving = true;
                         }
+                        else conveyorBelt.pushed = false;
                     }
                 }
                 else
@@ -83,10 +100,12 @@ public class TileMovment : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                 }
+                again = false;
             }
 
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if ((Input.GetKeyDown(KeyCode.S) || (again && direction == "back")) && !moving)
             {
+                direction = "back";
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
@@ -101,12 +120,14 @@ public class TileMovment : MonoBehaviour
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
-                        if (conveyorBelt.MoveBelt("back"))
+                        if (again) conveyorBelt.pushed = true;
+                        if (conveyorBelt.MoveBelt(direction))
                         {
                             targetPosition = transform.position + Vector3.back;
                             startPosition = transform.position;
                             moving = true;
                         }
+                        else conveyorBelt.pushed = false;
                     }
                 }
                 else
@@ -115,10 +136,12 @@ public class TileMovment : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                 }
+                again = false;
             }
 
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if ((Input.GetKeyDown(KeyCode.A) || (again && direction == "left")) && !moving)
             {
+                direction = "left";
                 transform.localRotation = Quaternion.Euler(0, 270, 0);
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
@@ -133,12 +156,14 @@ public class TileMovment : MonoBehaviour
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
-                        if (conveyorBelt.MoveBelt("left"))
+                        if (again) conveyorBelt.pushed = true;
+                        if (conveyorBelt.MoveBelt(direction))
                         {
                             targetPosition = transform.position + Vector3.left;
                             startPosition = transform.position;
                             moving = true;
                         }
+                        else conveyorBelt.pushed = false;
                     }
                 }
                 else
@@ -147,10 +172,12 @@ public class TileMovment : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                 }
+                again = false;
             }
 
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if ((Input.GetKeyDown(KeyCode.D) || (again && direction == "right")) && !moving)
             {
+                direction = "right";
                 transform.localRotation = Quaternion.Euler(0, 90, 0);
                 theRay.direction = transform.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
@@ -165,12 +192,14 @@ public class TileMovment : MonoBehaviour
                     if (hit.collider.tag != "unmovable")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
-                        if (conveyorBelt.MoveBelt("right"))
+                        if (again) conveyorBelt.pushed = true;
+                        if (conveyorBelt.MoveBelt(direction))
                         {
                             targetPosition = transform.position + Vector3.right;
                             startPosition = transform.position;
                             moving = true;
                         }
+                        else conveyorBelt.pushed = false;
                     }
                 }
                 else
@@ -179,6 +208,7 @@ public class TileMovment : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                 }
+                again = false;
             }
         }
     }

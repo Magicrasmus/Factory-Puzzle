@@ -72,11 +72,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5815256389229065619}
+  - component: {fileID: 5815256389229065621}
   - component: {fileID: 5815256389229065609}
   - component: {fileID: 5815256389229065622}
   - component: {fileID: 5815256389229065623}
   - component: {fileID: 5815256389229065620}
-  - component: {fileID: 5815256389229065621}
   - component: {fileID: 5815256389229065618}
   m_Layer: 0
   m_Name: Down belt
@@ -102,6 +102,27 @@ Transform:
   m_Father: {fileID: 5479115763629655474}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &5815256389229065621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815256389229065616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcfbb760ee89234d90b7f94cc48b591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conveyorbelt: {fileID: 5815256389229065616}
+  endpoint: {fileID: 5815256388796991252}
+  speed: 2
+  active: 0
+  moveSpeed: 20
+  rayLenght: 1.4
+  targetPosition: {x: 0, y: 0, z: 0}
+  rotation: 3
+  pushed: 0
 --- !u!33 &5815256389229065609
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -163,7 +184,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 1, z: 0.9}
+  m_Size: {x: 0.8, y: 1, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &5815256389229065620
 BoxCollider:
@@ -178,25 +199,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 0.8}
   m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &5815256389229065621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5815256389229065616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcfbb760ee89234d90b7f94cc48b591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conveyorbelt: {fileID: 5815256389229065616}
-  endpoint: {fileID: 5815256388796991252}
-  speed: 2
-  active: 0
-  moveSpeed: 20
-  rayLenght: 1.4
-  rotation: 3
 --- !u!54 &5815256389229065618
 Rigidbody:
   m_ObjectHideFlags: 0

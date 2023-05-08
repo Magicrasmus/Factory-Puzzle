@@ -7,6 +7,7 @@ using UnityEngine;
 public class RotatableBelts : MonoBehaviour
 {
     ConveyorBelt conveyorBelt;
+    public GameObject panel;
     Collider collider;
     string tag;
     bool active;
@@ -20,9 +21,9 @@ public class RotatableBelts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && tag=="movable" && active)
+        if (Input.GetKeyDown(KeyCode.Q) && tag=="movable" && active && panel.GetComponentInChildren<ControllPanel>().controll)
         {
-            conveyorBelt = collider.transform.GetComponent<ConveyorBelt>();
+            conveyorBelt = collider.transform.GetComponentInChildren<ConveyorBelt>();
             conveyorBelt.Rotate();
         }
     }
