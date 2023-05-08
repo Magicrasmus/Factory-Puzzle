@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 649717096}
+    - target: {fileID: 4972536013392389755, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
+      propertyPath: rotation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5659636233614146705, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -27,6 +27,7 @@ public class ConveyorBelt : MonoBehaviour
     public bool pushed;
     bool again;
     public Vector3 defaultPos;
+    int defaultRotation;
 
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class ConveyorBelt : MonoBehaviour
         pushed = false;
         again = false;
         defaultPos = transform.position;
+        defaultRotation = rotation;
     }
 
     // Update is called once per frame
@@ -265,8 +267,32 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
+    public void Rotate(int rotation)
+    {
+        switch (rotation)
+        {            
+            case 0:
+                transform.localRotation = Quaternion.Euler(0, 270, 0);
+                break;
+
+            case 1:
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+                break;
+
+            case 2:
+                transform.localRotation = Quaternion.Euler(0, 90, 0);
+                break;
+
+            case 3:
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                break;
+        }
+        this.rotation = rotation;
+    }
+
     public void ResetPos()
     {
         transform.position = defaultPos;
+        Rotate(defaultRotation);
     }
 }
