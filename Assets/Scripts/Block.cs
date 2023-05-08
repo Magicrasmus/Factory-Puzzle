@@ -4,12 +4,10 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 
-public class ConveyorBelt : MonoBehaviour
+public class Block : MonoBehaviour
 {
 
     public GameObject conveyorbelt;
-    public Transform endpoint;
-    public float speed;
     [SerializeField]
     float moveSpeed = 10f;
     [SerializeField]
@@ -26,7 +24,6 @@ public class ConveyorBelt : MonoBehaviour
     string direction;
     public bool pushed;
     bool again;
-    public Vector3 defaultPos;
 
 
     // Start is called before the first frame update
@@ -35,7 +32,6 @@ public class ConveyorBelt : MonoBehaviour
         slide = false;
         pushed = false;
         again = false;
-        defaultPos = transform.position;
     }
 
     // Update is called once per frame
@@ -238,7 +234,7 @@ public class ConveyorBelt : MonoBehaviour
             else again = false; return false;
         }
         else return true;
-    }  
+    }
 
     public void Rotate()
     {
@@ -263,10 +259,5 @@ public class ConveyorBelt : MonoBehaviour
                 rotation = 0;
                 break;
         }
-    }
-
-    public void ResetPos()
-    {
-        transform.position = defaultPos;
     }
 }

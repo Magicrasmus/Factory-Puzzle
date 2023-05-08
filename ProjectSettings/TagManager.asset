@@ -10,6 +10,8 @@ TagManager:
   - movable
   - unmovable
   - Floor
+  - IceTile
+  - Level
   layers:
   - Default
   - TransparentFX

@@ -19,10 +19,15 @@ public class TileMovment : MonoBehaviour
     bool slide;
     string direction;
     bool again;
+    Vector3 defaultPos;
+    BoxCollider box;
+    GameObject level;
+    List<ConveyorBelt> belts;
 
     // Start is called before the first frame update
     void Start()
     {
+        belts = new List<ConveyorBelt>();
         active = false;
         slide = false;
         again = false;
@@ -34,15 +39,25 @@ public class TileMovment : MonoBehaviour
         {
             slide = true;
         }
+        else if (other.GetComponent<Collider>().tag == "Level")
+        {
+            level = other.gameObject;
+            box = other.GetComponent<BoxCollider>();
+            defaultPos = box.center + new Vector3(0, 0.75f, 0);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("TestScene");
+            belts.AddRange(level.GetComponentsInChildren<ConveyorBelt>());
+            foreach (var belt in belts)
+            {
+                belt.ResetPos();
+            }
+            GetComponentInParent<Transform>().position = defaultPos;
         }
 
         Ray theRay = new Ray(transform.position, transform.TransformDirection(transform.forward));
