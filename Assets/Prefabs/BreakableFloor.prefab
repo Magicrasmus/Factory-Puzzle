@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSteps: 3
   brokenTex: {fileID: 2100000, guid: 72077f28f9303334eba347df7c1ed2e5, type: 2}
-  normalTex: {fileID: 2100000, guid: eb18eb2f0dbc505409675a979c4602d1, type: 2}
+  normalTex: {fileID: 2100000, guid: a118c6a148faf804b81a6d9e9cab9627, type: 2}
 --- !u!65 &7606173002047172815
 BoxCollider:
   m_ObjectHideFlags: 0

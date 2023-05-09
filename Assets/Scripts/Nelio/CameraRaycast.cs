@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraRaycast : MonoBehaviour
 {
-
     private ObjectFader fader;
 
     // Start is called before the first frame update

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditorInternal.ReorderableList;
 
 public class BreakFloorScript : MonoBehaviour
 {
@@ -22,16 +23,22 @@ public class BreakFloorScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             minSteps++;
-            Debug.Log("Youve taken " + minSteps + "max is " + maxSteps);
         }
 
         if (minSteps == maxSteps)
         {
-            Debug.Log("floor is broken");
             gameObject.tag = "unmovable";
             rend.material = brokenTex;
             collider.size = new Vector3 (9, 1, 9);
             collider.center = new Vector3 (0, 0.5f, 0);
         }
+    }
+
+    public void ResetTile()
+    {
+        minSteps = 0;
+        rend.material = normalTex;
+        collider.size = new Vector3(9, 0.1f, 9);
+        collider.center = new Vector3(0, 0.05f, 0);
     }
 }
