@@ -103,7 +103,7 @@ public class TileMovment : MonoBehaviour
                         startPosition = transform.position;
                         moving = true;
                     }
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                         if (again) conveyorBelt.pushed = true;
@@ -139,7 +139,7 @@ public class TileMovment : MonoBehaviour
                         startPosition = transform.position;
                         moving = true;
                     }
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                         if (again) conveyorBelt.pushed = true;
@@ -175,7 +175,7 @@ public class TileMovment : MonoBehaviour
                         startPosition = transform.position;
                         moving = true;
                     }
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                         if (again) conveyorBelt.pushed = true;
@@ -211,7 +211,7 @@ public class TileMovment : MonoBehaviour
                         startPosition = transform.position;
                         moving = true;
                     }
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         conveyorBelt = hit.transform.GetComponent<ConveyorBelt>();
                         if (again) conveyorBelt.pushed = true;

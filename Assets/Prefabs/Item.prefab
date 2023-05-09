@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3407744828463686792}
   m_Layer: 0
   m_Name: Item
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce62cc47846777b47b72122829f650d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  defaultPos: {x: 0, y: 0, z: 0}
 --- !u!65 &3407744828463686795
 BoxCollider:
   m_ObjectHideFlags: 0

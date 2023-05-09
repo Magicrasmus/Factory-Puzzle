@@ -23,7 +23,7 @@ public class ItemScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (active)
+        if (active && other.tag != "Goal")
         {
             transform.position = Vector3.MoveTowards(transform.position, other.GetComponent<ConveyorBelt>().endpoint.position, other.GetComponent<ConveyorBelt>().speed * Time.deltaTime);
         }

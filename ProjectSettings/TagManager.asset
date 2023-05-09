@@ -12,11 +12,12 @@ TagManager:
   - Floor
   - IceTile
   - Level
+  - Goal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Goal
   - Water
   - UI
   - 

@@ -82,7 +82,7 @@ public class ConveyorBelt : MonoBehaviour
                 theRay.direction = Vector3.forward;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         if (hit.collider.tag == "Floor")
                         {
@@ -123,7 +123,7 @@ public class ConveyorBelt : MonoBehaviour
                 theRay.direction = Vector3.back;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         if (hit.collider.tag == "Floor")
                         {
@@ -163,7 +163,7 @@ public class ConveyorBelt : MonoBehaviour
                 theRay.direction = Vector3.left;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         if (hit.collider.tag == "Floor")
                         {
@@ -203,7 +203,7 @@ public class ConveyorBelt : MonoBehaviour
                 theRay.direction = Vector3.right;
                 if (Physics.Raycast(theRay, out RaycastHit hit, rayLenght))
                 {
-                    if (hit.collider.tag != "unmovable")
+                    if (hit.collider.tag != "unmovable" && hit.collider.tag != "Goal")
                     {
                         if (hit.collider.tag == "Floor")
                         {
