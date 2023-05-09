@@ -130,10 +130,12 @@ MonoBehaviour:
   conveyorbelt: {fileID: 1365022563603958889}
   endpoint: {fileID: 1365022564575620368}
   speed: 2
-  active: 0
   moveSpeed: 20
   rayLenght: 1.4
+  targetPosition: {x: 0, y: 0, z: 0}
   rotation: 3
+  pushed: 0
+  defaultPos: {x: 0, y: 0, z: 0}
 --- !u!54 &1365022563603958895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -212,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54f68cc4767b81449904032638004e18, type: 2}
+  - {fileID: 2100000, guid: 61298a99883fba843b9ba37cab188440, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
