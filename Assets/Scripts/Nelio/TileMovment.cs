@@ -23,11 +23,13 @@ public class TileMovment : MonoBehaviour
     BoxCollider box;
     GameObject level;
     List<ConveyorBelt> belts;
+    List<BreakFloorScript> tiles;
 
     // Start is called before the first frame update
     void Start()
     {
         belts = new List<ConveyorBelt>();
+        tiles = new List<BreakFloorScript>();
         active = false;
         slide = false;
         again = false;
@@ -56,6 +58,11 @@ public class TileMovment : MonoBehaviour
             foreach (var belt in belts)
             {
                 belt.ResetPos();
+            }
+            tiles.AddRange(level.GetComponentsInChildren<BreakFloorScript>());
+            foreach (var tile in tiles)
+            {
+                tile.ResetTile();
             }
             GetComponentInParent<Transform>().position = defaultPos;
         }
