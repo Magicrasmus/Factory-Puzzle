@@ -117,12 +117,12 @@ MonoBehaviour:
   conveyorbelt: {fileID: 5815256389229065616}
   endpoint: {fileID: 5815256388796991252}
   speed: 2
-  active: 0
   moveSpeed: 20
   rayLenght: 1.4
   targetPosition: {x: 0, y: 0, z: 0}
   rotation: 3
   pushed: 0
+  defaultPos: {x: 0, y: 0, z: 0}
 --- !u!33 &5815256389229065609
 MeshFilter:
   m_ObjectHideFlags: 0

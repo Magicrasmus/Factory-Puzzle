@@ -222,9 +222,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4338049945673289790, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
   m_PrefabInstance: {fileID: 6639418611772195978}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &649717096 stripped
+--- !u!1 &1419787123 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3586769906486477602, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6033296477268681736, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
   m_PrefabInstance: {fileID: 6639418611772195978}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6639418611772195978
@@ -249,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 466129926852592272, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 649717096}
+      objectReference: {fileID: 1419787123}
     - target: {fileID: 4972536013392389755, guid: 5be7bae5b44f7564199403d17d33418e, type: 3}
       propertyPath: rotation
       value: 1

@@ -291,12 +291,12 @@ MonoBehaviour:
   conveyorbelt: {fileID: 4659893697271739441}
   endpoint: {fileID: 4659893696638406075}
   speed: 2
-  active: 0
   moveSpeed: 20
   rayLenght: 1.4
   targetPosition: {x: 0, y: 0, z: 0}
   rotation: 0
   pushed: 0
+  defaultPos: {x: 0, y: 0, z: 0}
 --- !u!54 &4659893697271739455
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class RotatableBelts : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         collider = other;
         tag = collider.tag;
