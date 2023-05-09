@@ -5,30 +5,55 @@ using static UnityEditorInternal.ReorderableList;
 
 public class BreakFloorScript : MonoBehaviour
 {
-    int minSteps = 0;
     public int maxSteps = 3;
-    public Material brokenTex;
-    public Material normalTex;
+    int currSteps;
+    public Material Tex3;
+    public Material Tex2;
+    public Material Tex1;
+    public Material Tex0;
     Renderer rend;
     BoxCollider collider;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
         collider = GetComponent<BoxCollider>();
         rend.enabled = true;
-        rend.material = normalTex;
+        currSteps = maxSteps;
     }
+
+    private void Update()
+    {
+        switch (currSteps)
+        {
+            case 3:
+                rend.material = Tex3;
+                break;
+
+            case 2:
+                rend.material = Tex2;
+                break;
+
+            case 1:
+                rend.material = Tex1;
+                break;
+
+            case 0:
+                rend.material = Tex0;
+                break;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            minSteps++;
+            currSteps--;
         }
 
-        if (minSteps == maxSteps)
+        if (currSteps == 0)
         {
             gameObject.tag = "unmovable";
-            rend.material = brokenTex;
             collider.size = new Vector3 (9, 1, 9);
             collider.center = new Vector3 (0, 0.5f, 0);
         }
@@ -36,8 +61,7 @@ public class BreakFloorScript : MonoBehaviour
 
     public void ResetTile()
     {
-        minSteps = 0;
-        rend.material = normalTex;
+        currSteps = maxSteps;
         collider.size = new Vector3(9, 0.1f, 9);
         collider.center = new Vector3(0, 0.05f, 0);
     }
