@@ -21,6 +21,9 @@ public class NextLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(switchTo);
+        if (other.tag != "Player")
+        {
+            SceneManager.LoadScene(switchTo);
+        }
     }
 }
