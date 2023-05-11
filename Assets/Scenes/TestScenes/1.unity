@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8887998143435321038, guid: e473e4b9ecbdfe24eaec51041d8c31a6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1757123414}
     - target: {fileID: 9184596046842672763, guid: e473e4b9ecbdfe24eaec51041d8c31a6, type: 3}
       propertyPath: m_Name
       value: Breakfloor
@@ -400,6 +404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82780e874545bed48a4c413c24c49c53, type: 3}
+--- !u!1 &1757123414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1031079805581986915, guid: e473e4b9ecbdfe24eaec51041d8c31a6, type: 3}
+  m_PrefabInstance: {fileID: 1446820471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1811467423
 GameObject:
   m_ObjectHideFlags: 0

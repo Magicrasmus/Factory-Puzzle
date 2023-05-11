@@ -45,7 +45,7 @@ public class TileMovment : MonoBehaviour
         {
             level = other.gameObject;
             box = other.GetComponent<BoxCollider>();
-            defaultPos = box.center + new Vector3(0, 0.75f, 0);
+            defaultPos = box.center + new Vector3(0, 0.45f, 0);
         }
     }
 
