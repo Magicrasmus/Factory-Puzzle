@@ -10,7 +10,7 @@ public class Camera : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        offset = new Vector3(0, 15, -4);
+        offset = new Vector3(0, 9, -2);
     }
 
     // Update is called once per frame
