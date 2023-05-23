@@ -9,12 +9,14 @@ public class ObjectFader : MonoBehaviour
 
     Material material;
     public bool DoFade = false;
+    Color currentColor;
 
     // Start is called before the first frame update
     void Start()
     {
         material = GetComponent<Renderer>().material;
         originalOpacity = material.color.a;
+        currentColor = material.color;
     }
 
     // Update is called once per frame
@@ -29,14 +31,12 @@ public class ObjectFader : MonoBehaviour
 
     void FadeNow()
     {
-        Color currentColor = material.color;
         Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, Mathf.Lerp(currentColor.a, fadeAmount, fadeSpeed * Time.deltaTime));
         material.color = smoothColor;
     }
 
     void ResetFade()
     {
-        Color currentColor = material.color;
         Color smoothColor = new Color(currentColor.r, currentColor.g, currentColor.b, Mathf.Lerp(currentColor.a, originalOpacity, fadeSpeed * Time.deltaTime));
         material.color = smoothColor;
     }
