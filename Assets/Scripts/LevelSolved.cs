@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextLevel : MonoBehaviour
+public class LevelSolved : MonoBehaviour
 {
-    public string switchTo;
+    public GameObject Door;
+    bool solved;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Door.GetComponent<DoorScript>().AddLevel();
+        solved = false;
     }
 
     // Update is called once per frame
@@ -23,7 +25,11 @@ public class NextLevel : MonoBehaviour
     {
         if (other.tag != "Player")
         {
-            SceneManager.LoadScene(switchTo);
+            if (!solved)
+            {
+                Door.GetComponent<DoorScript>().RemoveLevel();
+            }
+            solved = true;
         }
     }
 }

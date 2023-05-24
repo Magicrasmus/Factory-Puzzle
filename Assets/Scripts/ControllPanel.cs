@@ -32,14 +32,6 @@ public class ControllPanel : MonoBehaviour
             item.GetComponentInChildren<ItemScript>().ResetPos();
             active = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            item.GetComponentInChildren<ItemScript>().active = false;
-            player.GetComponentInChildren<TileMovment>().active = false;
-            item.GetComponentInChildren<ItemScript>().ResetPos();
-            active = false;
-        }
     }
     void OnTriggerEnter(Collider other)
     {
@@ -55,5 +47,13 @@ public class ControllPanel : MonoBehaviour
         {
             controll = false;
         }
+    }
+
+    public void Reset()
+    {
+        item.GetComponentInChildren<ItemScript>().active = false;
+        player.GetComponentInChildren<TileMovment>().active = false;
+        item.GetComponentInChildren<ItemScript>().ResetPos();
+        active = false;
     }
 }

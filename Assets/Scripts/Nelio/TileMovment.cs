@@ -45,7 +45,7 @@ public class TileMovment : MonoBehaviour
         {
             level = other.gameObject;
             box = other.GetComponent<BoxCollider>();
-            defaultPos = box.center + new Vector3(0, 0.45f, 0);
+            defaultPos = box.center + level.transform.position + new Vector3(0, 0.45f, 0);
         }
     }
 
@@ -54,6 +54,8 @@ public class TileMovment : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            belts.Clear();
+            tiles.Clear();
             belts.AddRange(level.GetComponentsInChildren<ConveyorBelt>());
             foreach (var belt in belts)
             {
@@ -64,6 +66,7 @@ public class TileMovment : MonoBehaviour
             {
                 tile.ResetTile();
             }
+            level.GetComponentInChildren<ControllPanel>().Reset();
             GetComponentInParent<Transform>().position = defaultPos;
         }
 

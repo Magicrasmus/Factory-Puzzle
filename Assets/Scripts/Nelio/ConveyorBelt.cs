@@ -38,6 +38,7 @@ public class ConveyorBelt : MonoBehaviour
         again = false;
         defaultPos = transform.position;
         defaultRotation = rotation;
+        targetPosition = defaultPos;
     }
 
     // Update is called once per frame
@@ -60,6 +61,11 @@ public class ConveyorBelt : MonoBehaviour
             }
             transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
             return;
+        }
+
+        if(!moving && transform.position != targetPosition)
+        {
+            transform.position = targetPosition;
         }
     }
 
@@ -293,6 +299,7 @@ public class ConveyorBelt : MonoBehaviour
     public void ResetPos()
     {
         transform.position = defaultPos;
+        targetPosition = defaultPos;
         Rotate(defaultRotation);
     }
 }

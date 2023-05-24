@@ -89,7 +89,7 @@ MonoBehaviour:
   moveSpeed: 20
   rayLenght: 1.4
   targetPosition: {x: 0, y: 0, z: 0}
-  rotation: 3
+  rotation: 2
   pushed: 0
   defaultPos: {x: 0, y: 0, z: 0}
 --- !u!33 &4043126937858274914
