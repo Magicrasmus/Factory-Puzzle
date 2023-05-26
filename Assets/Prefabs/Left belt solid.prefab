@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 4837631105423723769}
   m_Layer: 0
   m_Name: Left belt
-  m_TagString: movable
+  m_TagString: unmovable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

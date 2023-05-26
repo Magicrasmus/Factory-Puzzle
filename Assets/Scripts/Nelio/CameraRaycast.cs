@@ -5,11 +5,12 @@ using UnityEngine;
 public class CameraRaycast : MonoBehaviour
 {
     private ObjectFader fader;
+    GameObject gameObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,6 +38,11 @@ public class CameraRaycast : MonoBehaviour
                 }
                 else
                 {
+                    if (hit.collider.gameObject != gameObject && fader != null)
+                    {
+                        fader.DoFade = false;
+                    }
+                    gameObject = hit.collider.gameObject;
                     fader = hit.collider.gameObject.GetComponent<ObjectFader>();
                     if(fader != null)
                     {
