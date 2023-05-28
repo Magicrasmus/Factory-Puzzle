@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a118c6a148faf804b81a6d9e9cab9627, type: 2}
+  - {fileID: 2100000, guid: 31d666d3ae974414382fd5b22d523ad8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSteps: 3
-  Tex3: {fileID: 2100000, guid: a118c6a148faf804b81a6d9e9cab9627, type: 2}
-  Tex2: {fileID: 2100000, guid: 02dbb779ca63c4342bf6a709377b173b, type: 2}
-  Tex1: {fileID: 2100000, guid: 1d6081b460694b04a900bd02c443af17, type: 2}
-  Tex0: {fileID: 2100000, guid: 72077f28f9303334eba347df7c1ed2e5, type: 2}
+  Tex3: {fileID: 2100000, guid: 31d666d3ae974414382fd5b22d523ad8, type: 2}
+  Tex2: {fileID: 2100000, guid: f678d2ce48be4e54395b8d6d130be5c0, type: 2}
+  Tex1: {fileID: 2100000, guid: 2054ccec7566fe149931ae987010637d, type: 2}
+  Tex0: {fileID: 2100000, guid: 4b87b30e848a7f3478daf32a489f324a, type: 2}
 --- !u!64 &7081694095908655824
 MeshCollider:
   m_ObjectHideFlags: 0

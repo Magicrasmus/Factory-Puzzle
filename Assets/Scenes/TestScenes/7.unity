@@ -10533,6 +10533,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5343945520697323188}
     m_Modifications:
+    - target: {fileID: 1777008563719604214, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
+      propertyPath: Tex0
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b87b30e848a7f3478daf32a489f324a, type: 2}
+    - target: {fileID: 1777008563719604214, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
+      propertyPath: Tex1
+      value: 
+      objectReference: {fileID: 2100000, guid: 2054ccec7566fe149931ae987010637d, type: 2}
+    - target: {fileID: 1777008563719604214, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
+      propertyPath: Tex2
+      value: 
+      objectReference: {fileID: 2100000, guid: f678d2ce48be4e54395b8d6d130be5c0, type: 2}
+    - target: {fileID: 1777008563719604214, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
+      propertyPath: Tex3
+      value: 
+      objectReference: {fileID: 2100000, guid: 31d666d3ae974414382fd5b22d523ad8, type: 2}
     - target: {fileID: 5909383083162123786, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
       propertyPath: m_RootOrder
       value: 56
