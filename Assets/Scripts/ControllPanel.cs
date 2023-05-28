@@ -8,6 +8,7 @@ public class ControllPanel : MonoBehaviour
     bool active;
     public GameObject item;
     public GameObject player;
+    public AudioSource push;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ControllPanel : MonoBehaviour
             item.GetComponentInChildren<ItemScript>().active = true;
             player.GetComponentInChildren<TileMovment>().active = true;
             active = true;
+            
         }
         else if (Input.GetKeyDown(KeyCode.E) && active && controll)
         {
@@ -31,6 +33,8 @@ public class ControllPanel : MonoBehaviour
             player.GetComponentInChildren<TileMovment>().active = false;
             item.GetComponentInChildren<ItemScript>().ResetPos();
             active = false;
+            Debug.Log("press");
+            push.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
