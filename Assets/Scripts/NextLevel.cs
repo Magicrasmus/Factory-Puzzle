@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     public string switchTo;
+    public AudioSource win;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class NextLevel : MonoBehaviour
         if (other.tag != "Player")
         {
             SceneManager.LoadScene(switchTo);
+            win.Play();
         }
     }
 }

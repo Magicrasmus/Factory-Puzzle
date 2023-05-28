@@ -13,7 +13,7 @@ public class BreakFloorScript : MonoBehaviour
     public Material Tex0;
     Renderer rend;
     BoxCollider collider;
-
+    public AudioSource breaks;
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -49,6 +49,7 @@ public class BreakFloorScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             currSteps--;
+            breaks.Play();
         }
 
         if (currSteps == 0)
