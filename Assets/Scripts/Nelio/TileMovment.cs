@@ -24,6 +24,7 @@ public class TileMovment : MonoBehaviour
     GameObject level;
     List<ConveyorBelt> belts;
     List<BreakFloorScript> tiles;
+    public AudioSource sliding;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class TileMovment : MonoBehaviour
         if (other.GetComponent<Collider>().tag == "IceTile")
         {
             slide = true;
+            sliding.Play();
         }
         else if (other.GetComponent<Collider>().tag == "Level")
         {

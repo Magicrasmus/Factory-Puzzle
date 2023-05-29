@@ -28,6 +28,8 @@ public class ConveyorBelt : MonoBehaviour
     bool again;
     public Vector3 defaultPos;
     int defaultRotation;
+    public AudioSource push;
+    public AudioSource sliding;
 
 
     // Start is called before the first frame update
@@ -74,6 +76,7 @@ public class ConveyorBelt : MonoBehaviour
         if (other.GetComponent<Collider>().tag == "IceTile" && !pushed)
         {
             slide = true;
+            sliding.Play();
         }
     }
 
@@ -97,6 +100,8 @@ public class ConveyorBelt : MonoBehaviour
                             startPosition = transform.position;
                             moving = true;
                             again = false;
+                            //push.Play();
+                            //Debug.Log("pushed");
                             return true;
                         }
 
@@ -108,6 +113,8 @@ public class ConveyorBelt : MonoBehaviour
                             startPosition = transform.position;
                             moving = true;
                             again = false;
+                            //push.Play();
+                            //Debug.Log("pushed");
                             return true;
                         }
                         else conveyorBelt.pushed = false; again = false; return false;
@@ -120,6 +127,8 @@ public class ConveyorBelt : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                     again = false;
+                    push.Play();
+                    Debug.Log("pushed");
                     return true;
                 }
             }
@@ -160,6 +169,8 @@ public class ConveyorBelt : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                     again = false;
+                    push.Play();
+                    Debug.Log("pushed");
                     return true;
                 }
             }
@@ -188,6 +199,7 @@ public class ConveyorBelt : MonoBehaviour
                             startPosition = transform.position;
                             moving = true;
                             again = false;
+
                             return true;
                         }
                         else conveyorBelt.pushed = false; again = false; return false;
@@ -200,6 +212,8 @@ public class ConveyorBelt : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                     again = false;
+                    push.Play();
+                    Debug.Log("pushed");
                     return true;
                 }
             }
@@ -240,6 +254,8 @@ public class ConveyorBelt : MonoBehaviour
                     startPosition = transform.position;
                     moving = true;
                     again = false;
+                    push.Play();
+                    Debug.Log("pushed");
                     return true;
                 }
             }
