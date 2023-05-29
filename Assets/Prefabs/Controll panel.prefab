@@ -101,6 +101,7 @@ MonoBehaviour:
   controll: 0
   item: {fileID: 0}
   player: {fileID: 0}
+  starting: {fileID: 0}
 --- !u!64 &3097606752361727581
 MeshCollider:
   m_ObjectHideFlags: 0
