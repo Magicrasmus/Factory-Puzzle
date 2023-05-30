@@ -7,6 +7,7 @@ public class LevelSolved : MonoBehaviour
 {
     public GameObject Door;
     bool solved;
+    public AudioSource win;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class LevelSolved : MonoBehaviour
     {
         if (other.tag != "Player")
         {
+            win.Play();
             if (!solved)
             {
                 Door.GetComponent<DoorScript>().RemoveLevel();
