@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2698073205236722796}
   - component: {fileID: 2086542579603989356}
   - component: {fileID: 2276500991203072600}
+  - component: {fileID: 8660805552884094412}
   - component: {fileID: 5080348129275504703}
   - component: {fileID: 2553908671657154576}
   - component: {fileID: 6739237909753474568}
@@ -99,7 +100,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524f16f844eb54744aa82887e4e06a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchTo: 
+  Door: {fileID: 0}
+--- !u!114 &8660805552884094412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110408357696970334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9d6223d051fff43bcd48264c3eac23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &5080348129275504703
 BoxCollider:
   m_ObjectHideFlags: 0

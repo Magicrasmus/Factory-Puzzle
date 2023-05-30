@@ -11,7 +11,7 @@ public class LevelSolved : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Door.GetComponent<DoorScript>().AddLevel();
+        Door.GetComponentInChildren<DoorScript>().AddLevel();
         solved = false;
     }
 
@@ -27,7 +27,7 @@ public class LevelSolved : MonoBehaviour
         {
             if (!solved)
             {
-                Door.GetComponent<DoorScript>().RemoveLevel();
+                Door.GetComponentInChildren<DoorScript>().RemoveLevel();
             }
             solved = true;
         }
