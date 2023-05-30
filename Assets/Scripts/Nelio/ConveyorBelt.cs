@@ -73,7 +73,7 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Collider>().tag == "IceTile" && !pushed)
+        if (other.GetComponent<Collider>().tag == "IceTile")
         {
             slide = true;
             sliding.Play();
