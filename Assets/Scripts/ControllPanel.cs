@@ -9,12 +9,14 @@ public class ControllPanel : MonoBehaviour
     public GameObject item;
     public GameObject player;
     public AudioSource starting;
+    GameObject camera;
 
     // Start is called before the first frame update
     void Start()
     {
         controll = false;
         active = false;
+        camera = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -22,18 +24,17 @@ public class ControllPanel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !active && controll)
         {
-            item.GetComponentInChildren<ItemScript>().active = true;
+            item.GetComponent<ItemScript>().active = true;
             player.GetComponentInChildren<TileMovment>().active = true;
+            camera.GetComponent<Camera>().SetItem(item);
+            camera.GetComponent<Camera>().Activate();
             active = true;
             starting.Play();
             
         }
         else if (Input.GetKeyDown(KeyCode.E) && active && controll)
         {
-            item.GetComponentInChildren<ItemScript>().active = false;
-            player.GetComponentInChildren<TileMovment>().active = false;
-            item.GetComponentInChildren<ItemScript>().ResetPos();
-            active = false;
+            Reset();
         }
     }
     void OnTriggerEnter(Collider other)
@@ -54,8 +55,9 @@ public class ControllPanel : MonoBehaviour
 
     public void Reset()
     {
-        item.GetComponentInChildren<ItemScript>().active = false;
+        item.GetComponent<ItemScript>().active = false;
         player.GetComponentInChildren<TileMovment>().active = false;
+        camera.GetComponent<Camera>().Deactivate();
         item.GetComponentInChildren<ItemScript>().ResetPos();
         active = false;
     }
