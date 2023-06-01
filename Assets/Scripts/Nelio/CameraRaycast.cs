@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author Nelio Sager 
+
 public class CameraRaycast : MonoBehaviour
 {
     private ObjectFader fader;
@@ -14,6 +16,14 @@ public class CameraRaycast : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    
+
+
+    /* The code creats a RayCast that is aimed at the tag player. Then it reads if the raycast hits anything exept the player tag, that objects color 
+     * is going to be set to transparant 
+     */
+    
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
