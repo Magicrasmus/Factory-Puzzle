@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: a61ef10b58f18b14a97d56977275115e
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Game Over.unity
-    guid: 924b2cd51816c184d907c8e839da6801
-  - enabled: 1
     path: Assets/Scenes/TestScenes/1.unity
     guid: d3fd73fc27888eb4e9079aa6f77b995e
   - enabled: 1
@@ -28,11 +22,35 @@ EditorBuildSettings:
     guid: de1fd9578426a15419af2c4757022203
   - enabled: 1
     path: Assets/Scenes/TestScenes/5.unity
-    guid: 74339e500d6cc2c4c953440f348006f6
+    guid: c4b564f89a718b1468f96e692e33bbe0
   - enabled: 1
     path: Assets/Scenes/TestScenes/6.unity
     guid: 98b7d3e2383ab1f4cb70f90a0b558428
   - enabled: 1
     path: Assets/Scenes/TestScenes/7.unity
     guid: d67f736f9ec8297459cdcb387f8394b1
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/8.unity
+    guid: ae4c4b2d8171a4941bde3b37af7dde86
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/9.unity
+    guid: ac2ab1772d7782c42b45fdd5c1e1fa9d
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/10.unity
+    guid: f592cfb7a5d020144ab6d62c2298a85a
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/11.unity
+    guid: b3b06c721b32a424abb6ff9ece906f4a
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/12.unity
+    guid: 26d846d0f743c424883ba3b30a6b5fd3
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/13.unity
+    guid: fe0e5537796ddb8448afac4e28fc7cb4
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/14.unity
+    guid: 2b6b064d4c1e8fa48a0277a28f429ba1
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/15.unity
+    guid: 74339e500d6cc2c4c953440f348006f6
   m_configObjects: {}

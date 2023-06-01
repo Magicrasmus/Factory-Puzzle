@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -418,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221312093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -192.60596, y: -15, z: 353}
+  m_LocalPosition: {x: -192.60596, y: 24, z: 353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa69997585b4714fab10f5c8649d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: 
 --- !u!1 &249056139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1084,6 @@ GameObject:
   - component: {fileID: 719932393}
   - component: {fileID: 719932395}
   - component: {fileID: 719932394}
-  - component: {fileID: 719932396}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1149,18 +1149,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719932392}
   m_CullTransparentMesh: 1
---- !u!114 &719932396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719932392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db51e9c3fae94b342a888a35f69864e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &846796173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa69997585b4714fab10f5c8649d9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: 9
 --- !u!1 &1185470013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,7 +3203,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

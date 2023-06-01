@@ -16,12 +16,15 @@ public class NextLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene(level);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player")
+        if (other.tag != "Player" && other.tag != "movable")
         {
             SceneManager.LoadScene(level);
         }

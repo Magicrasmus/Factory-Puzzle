@@ -3120,7 +3120,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1777008563719604214, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
       propertyPath: maxSteps
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5909383083162123786, guid: 9ef6f0f039f602e40ad1ce33536a208c, type: 3}
       propertyPath: m_RootOrder
