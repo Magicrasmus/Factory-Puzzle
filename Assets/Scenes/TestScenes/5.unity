@@ -356,9 +356,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
+    - target: {fileID: 6950661043949827768, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
+      propertyPath: m_Radius
+      value: 0.8753824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950661043949827768, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
+      propertyPath: m_Center.z
+      value: 0.11806965
+      objectReference: {fileID: 0}
     - target: {fileID: 9018747514763932192, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9018747514763932192, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5161,7 +5169,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 461210071909132363, guid: 838397dfed70d6441babe7f0c03642d1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 461210071909132363, guid: 838397dfed70d6441babe7f0c03642d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6135,7 +6143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1983482750556424500, guid: f30068f64e019db4786c3f3ce54d166a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1983482750556424500, guid: f30068f64e019db4786c3f3ce54d166a, type: 3}
       propertyPath: m_LocalPosition.x

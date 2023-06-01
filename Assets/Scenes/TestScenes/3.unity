@@ -538,6 +538,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
+    - target: {fileID: 6950661043949827768, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
+      propertyPath: m_Radius
+      value: 1.0948167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950661043949827768, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10343216
+      objectReference: {fileID: 0}
     - target: {fileID: 9018747514763932192, guid: 5daf0cb66e7074d4ca20a7c82fb83246, type: 3}
       propertyPath: m_RootOrder
       value: 6

@@ -41,7 +41,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7123261608339570517, guid: 42fc070d2f912334a8e19cf381e0f79c, type: 3}
       propertyPath: m_Radius
-      value: 0.6
+      value: 0.96336067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123261608339570517, guid: 42fc070d2f912334a8e19cf381e0f79c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.028023869
       objectReference: {fileID: 0}
     - target: {fileID: 7123261608339570521, guid: 42fc070d2f912334a8e19cf381e0f79c, type: 3}
       propertyPath: m_Name
