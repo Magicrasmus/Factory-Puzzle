@@ -39,7 +39,7 @@ public class TileMovment : MonoBehaviour
     }
 
     /// <summary>
-    /// This code makes it possible for the player to slide on ice by calling the method sliding
+    /// This code is for the collsion with Ice tiles
     /// </summary>
     /// <param name="other"></param>
 

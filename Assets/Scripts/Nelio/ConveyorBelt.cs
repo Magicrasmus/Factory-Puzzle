@@ -45,9 +45,11 @@ public class ConveyorBelt : MonoBehaviour
 
     // Update is called once per frame
     
-    /*This code is for the movement of the conveoyer belts and how the converyor belts work. It also creats an raycast whicgh is used to determin if the
-     * conveyor belts are able to move. 
-     */
+    /// <summary>
+    /// This code is for the movement of the conveoyer belts and how the converyor belts work.
+    /// </summary>
+      
+     
     
 
     void Update()
@@ -77,6 +79,11 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Collsion for the ice tiles 
+    /// </summary>
+    /// <param name="other"></param>
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collider>().tag == "IceTile")
@@ -85,6 +92,12 @@ public class ConveyorBelt : MonoBehaviour
             sliding.Play();
         }
     }
+
+    /// <summary>
+    /// This code is about how the conveyor belts should move and also creates a raycast that handles is collision and if the conveyor belt is able to move.  
+    /// </summary>
+    /// <param name="direction"></param>
+    /// <returns></returns>
 
     public bool MoveBelt(string direction)
     {
@@ -270,6 +283,10 @@ public class ConveyorBelt : MonoBehaviour
         else return true;
     }  
 
+    /// <summary>
+    /// This code is for the rotation of the conveyorbelts 
+    /// </summary>
+
     public void Rotate()
     {
         rotation++;
@@ -317,6 +334,10 @@ public class ConveyorBelt : MonoBehaviour
         }
         this.rotation = rotation;
     }
+
+    /// <summary>
+    /// This code is so that the conveyor is always at the center of a tile
+    /// </summary>
 
     public void ResetPos()
     {
