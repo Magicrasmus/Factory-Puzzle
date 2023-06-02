@@ -44,6 +44,12 @@ public class ConveyorBelt : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    /*This code is for the movement of the conveoyer belts and how the converyor belts work. It also creats an raycast whicgh is used to determin if the
+     * conveyor belts are able to move. 
+     */
+    
+
     void Update()
     {
         if (moving)

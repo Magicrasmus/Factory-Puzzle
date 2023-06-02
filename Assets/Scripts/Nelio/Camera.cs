@@ -9,6 +9,11 @@ public class Camera : MonoBehaviour
     Vector3 offset;
     bool active;
     // Start is called before the first frame update
+
+    /// <summary>
+    /// This code is for the cameras posistion relative to the player and for the effects where the camera follows the item ones a solution is tride
+    /// </summary>
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");

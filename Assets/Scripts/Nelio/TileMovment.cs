@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Author Nelio
+
 public class TileMovment : MonoBehaviour
 {
     [SerializeField]
@@ -36,6 +38,11 @@ public class TileMovment : MonoBehaviour
         again = false;
     }
 
+    /// <summary>
+    /// This code makes it possible for the player to slide on ice by calling the method sliding
+    /// </summary>
+    /// <param name="other"></param>
+
     void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collider>().tag == "IceTile")
@@ -52,6 +59,11 @@ public class TileMovment : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    /* This code is for the movement in the game and sets how far the player should go and with what speed that should happen.
+     * The code also creats a raycast which determnins if the player is able to move and push things around. 
+     */
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
