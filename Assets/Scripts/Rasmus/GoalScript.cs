@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GoalScript : MonoBehaviour
 {
+    /// <summary>
+    /// Author Rasmus Gennebäck Oreman
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Box")

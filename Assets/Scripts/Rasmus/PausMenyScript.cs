@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PausMenyScript : MonoBehaviour
 {
+
+    /// <summary>
+    /// Author Rasmus Gennebäck Oreman
+    /// </summary>
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
@@ -30,7 +34,9 @@ public class PausMenyScript : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-
+    /// <summary>
+    /// Pause metoden sätter tiden till noll och sen aktiverar canvas för pausemeny
+    /// </summary>
     void Pause()
     {
         pauseMenuUI.SetActive(true);

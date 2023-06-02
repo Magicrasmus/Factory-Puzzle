@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class BoxMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Author Rasmus Gennebäck Oreman
+    /// </summary>
 
     public Vector3 direction;
     public Rigidbody rb;
@@ -27,18 +29,22 @@ public class BoxMovement : MonoBehaviour
         }
       
     }
+    /// <summary>
+    /// Såfort boxen kommer i triggern på belt så blir deras egna direction noll och sen i ett annat script så ger belt boxen en annan direction
+    /// </summary>
+    
+    private void OnTriggerExit(Collider other)
+    {
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Belt")
-    //    {
-    //        direction = Vector3.zero;
-    //        rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
+        if (other.gameObject.tag == "Belt")
+        {
+            direction = Vector3.zero;
+            rb.MovePosition(rb.position += direction * Time.fixedDeltaTime);
 
-    //    }
-    //    else
-    //    {
-    //    }
-    //    Debug.Log("out");
-    //}
+        }
+        else
+        {
+        }
+        Debug.Log("out");
+    }
 }

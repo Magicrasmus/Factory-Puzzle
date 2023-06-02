@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
+    /// <summary>
+    /// Author Rasmus Gennebäck Oreman
+    /// </summary>
     public float moveSpeed = 5f;
     
     public Rigidbody rb;
@@ -18,7 +21,9 @@ public class MovementScript : MonoBehaviour
 
 
     }
-
+    /// <summary>
+    /// Ändrar movement på x och z axel och sen flyttar spelarens rigidbody mot movement
+    /// </summary>
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position += moveSpeed * Time.fixedDeltaTime * movement);

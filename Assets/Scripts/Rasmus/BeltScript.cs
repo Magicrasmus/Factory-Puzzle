@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BeltScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+   /// <summary>
+   /// Author Rasmus Gennebäck Oreman
+   /// </summary>
     public Vector3 beltDirection;
     bool start = true;
     
@@ -26,7 +28,7 @@ public class BeltScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
+        /// Om boxen kommer in till belts trigger så kommer den ta boxens direction och ändra den till den direction som belt har
 
         if (other.gameObject.tag == "Box" && start == true)
         {

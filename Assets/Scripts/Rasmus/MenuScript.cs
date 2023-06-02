@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    /// <summary>
+    /// Author Rasmus Gennebäck Oreman
+    /// </summary>
     public string loadScene;
+
+    /// <summary>
+    /// PlayGame är en metod som laddar in en scen och QuitGame stänger av applikationen
+    /// </summary>
     public void PlayGame()
     {
         SceneManager.LoadScene(loadScene);

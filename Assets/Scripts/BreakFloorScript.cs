@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class BreakFloorScript : MonoBehaviour
 {
-    /// <summary>
-    /// Author Rasmus Gennebäck Oreman
-    /// </summary>
-
     public int maxSteps = 3;
     int currSteps;
     public Material Tex3;
@@ -25,9 +21,6 @@ public class BreakFloorScript : MonoBehaviour
         currSteps = maxSteps;
     }
 
-    /// <summary>
-    /// När currsteps ändras så ändras också materialet på breakfloor
-    /// </summary>
     private void Update()
     {
         switch (currSteps)
@@ -49,10 +42,7 @@ public class BreakFloorScript : MonoBehaviour
                 break;
         }
     }
-    /// <summary>
-    /// När spelet går av triggern på breakfloor så minskas currsteps och såfort den blir noll så ändras breakfloors tag och dens collider blir större så att raycasten på spelaren kan upptäcka den
-    /// </summary>
-    
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
